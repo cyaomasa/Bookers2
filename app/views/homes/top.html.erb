@@ -1,3 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <%= content_tag :div, message, class: message_type %>
+<% end %>
+
 <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong> !!</h1>
 <p>In <i class="fas fa-book"></i><strong>Bookers</strong>,<br>
 you can share and exchange your opinions,inpressions,and emotions<br>
@@ -5,8 +9,8 @@ about various books!
 </p>
 
 <div>
-    <%= link_to "Log in", new_user_session_path %>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-info" %>
 </div>
 <div>
-    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %>
 </div>
