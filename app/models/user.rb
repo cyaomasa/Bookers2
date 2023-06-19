@@ -6,8 +6,8 @@ class User < ApplicationRecord
          
   has_one_attached :profile_image
   
-  validates :name, presence: true
-  validates :introduction, presence: true
+  validates :name, uniqueness: true, length: { in: 2..20 }
+  validates :introduction, length: { maximum: 50 }
   
   has_many :books, dependent: :destroy
   
