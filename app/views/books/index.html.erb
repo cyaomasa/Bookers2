@@ -1,3 +1,12 @@
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+ 
  <div class="container">
   <div class="row">
   
@@ -26,7 +35,7 @@
  <p>Title</p>
    <%= f.text_field :title %>
  <p>Option</p>
-  <%= f.text_area :body %>
+  <%= f.text_area :body %><br>
  <%= f.submit 'Create book', class: "btn btn-success" %>
  <% end %>
  
